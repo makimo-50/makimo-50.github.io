@@ -11,23 +11,24 @@
             background-color: #f4f4f9;
             color: #333;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
         header {
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 10px;
             background: #333;
             color: #fff;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
         }
         section {
-            padding: 50px 0;
+            padding: 30px 0;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -36,15 +37,63 @@
             opacity: 1;
             transform: translateY(0);
         }
+        section h2 {
+            font-size: 1.5em;
+        }
+        section p {
+            font-size: 1.2em;
+        }
         section a {
             display: block;
             text-decoration: none;
             color: #007bff;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin: 10px 0;
         }
         section a:hover {
             text-decoration: underline;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .timeline-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:nth-child(even) {
+            border-color: #ff5722;
+        }
+        .timeline-item:nth-child(odd) {
+            border-color: #4caf50;
+        }
+        .timeline-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .timeline-item .date {
+            color: #777;
+            font-size: 0.9em;
+        }
+        .skill-labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-label {
+            background: #e0f7fa;
+            border-radius: 15px;
+            padding: 10px 15px;
+            color: #00796b;
+            font-size: 1em;
+            font-weight: bold;
+            display: inline-block;
         }
         footer {
             text-align: center;
@@ -68,15 +117,43 @@
             <a href="#projects">作成したアプリやサイト</a>
             <a href="#contact">連絡先</a>
         </section>
-        
+
         <section id="introduction">
-            <h2>自己紹介や経歴</h2>
-            <p>ここに自己紹介や経歴を記載します。</p>
+            <h2>職務経歴</h2>
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <h3>株式会社ワークスアプリケーションズ<br>2010/7 ~ 2012/10</h3>
+                    <p class="date">プロダクト開発・保守</p>
+                    <p>COMPANY製品のプロダクト開発、人事考課、自己申告などのサブシステムの開発・保守。</p>
+                    <p>学んだこと: Java, Delphi, Oracle SQL, Javascript<br>
+                    業務内容: 要件定義、レビュー作成資料、テストケース作成、機能開発など</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>株式会社ワークスアプリケーションズ<br>2012/11 ~ 2014/02</h3>
+                    <p class="date">社内ツール開発</p>
+                    <p>ドキュメントのライフサイクルマネジメントを行う社内ツールの開発・保守・運用。</p>
+                    <p>学んだこと: Angular.js, Java, Python, AWS<br>
+                    業務内容: 要件定義、テストケース作成、機能開発など</p>
+                </li>
+                <!-- 他の職務経歴も同様に追加 -->
+            </ul>
         </section>
         
         <section id="skills">
             <h2>スキルレベルや保有する資格</h2>
-            <p>ここにスキルレベルや資格について記載します。</p>
+            <div class="skill-labels">
+                <div class="skill-label">Java</div>
+                <div class="skill-label">Delphi</div>
+                <div class="skill-label">Oracle SQL</div>
+                <div class="skill-label">JavaScript</div>
+                <div class="skill-label">Angular.js</div>
+                <div class="skill-label">Python</div>
+                <div class="skill-label">AWS</div>
+                <div class="skill-label">GCP</div>
+                <div class="skill-label">MySQL</div>
+                <div class="skill-label">React</div>
+                <!-- 他のスキルも同様に追加 -->
+            </div>
         </section>
         
         <section id="projects">
