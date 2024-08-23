@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makimo-50 Pages</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        section a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to makimo-50 Pages!!</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="introduction">
+            <a href="#introduction">自己紹介や経歴</a>
+            <a href="#skills">スキルレベルや保有する資格</a>
+            <a href="#projects">作成したアプリやサイト</a>
+            <a href="#contact">連絡先</a>
+        </section>
+        
+        <section id="introduction">
+            <h2>自己紹介や経歴</h2>
+            <p>ここに自己紹介や経歴を記載します。</p>
+        </section>
+        
+        <section id="skills">
+            <h2>スキルレベルや保有する資格</h2>
+            <p>ここにスキルレベルや資格について記載します。</p>
+        </section>
+        
+        <section id="projects">
+            <h2>作成したアプリやサイト</h2>
+            <p>ここに作成したアプリやサイトについて記載します。</p>
+        </section>
+        
+        <section id="contact">
+            <h2>連絡先</h2>
+            <p>ここに連絡先情報を記載します。</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 makimo-50</p>
+    </footer>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
